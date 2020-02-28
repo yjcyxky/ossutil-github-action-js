@@ -50,10 +50,15 @@ try {
   download(ossutil_url, 'ossutil');
 
   // Run batch program
-  let out = child_process.spawnSync(`${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`]);
-  console.log('Status Code: ' + out.status);
-  console.log(out.stdout.toString('utf8'));
-  console.log(out.stderr.toString('utf8'));
+  console.log("Running entrypoint.[sh|bat]...")
+  out = child_process.spawnSync(`${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`], {
+    cwd: process.cwd(),
+    env: process.env,
+    stdio: 'pipe',
+    encoding: 'utf-8'
+  });
+
+  console.log(out.output);
 
   core.setOutput("command", `ossutil ${ossArgs}`);
 } catch (error) {
