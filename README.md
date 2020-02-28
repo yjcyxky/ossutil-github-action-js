@@ -4,9 +4,12 @@
 <p align="center">Jingcheng Yang [yjcyxky@163.com]</p>
 
 <p align="center">
-<img src="https://github.com/go-choppy/ossutil-github-action/workflows/.github/workflows/test.yml/badge.svg" alt="Build Status">
-<img src="https://img.shields.io/github/license/go-choppy/ossutil-github-action.svg" alt="License">
+<img src="https://github.com/go-choppy/ossutil-github-action-js/workflows/.github/workflows/test.yml/badge.svg" alt="Build Status">
+<img src="https://img.shields.io/github/license/go-choppy/ossutil-github-action-js.svg" alt="License">
 </p>
+
+## Notice
+If you only need to support linux, you can use [ossutil-github-action](https://github.com/go-choppy/ossutil-github-action)
 
 ## Inputs
 
