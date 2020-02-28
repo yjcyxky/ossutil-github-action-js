@@ -50,7 +50,7 @@ try {
   download(ossutil_url, 'ossutil');
 
   // Run batch program
-  let out = child_process.execSync(`${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`]);
+  let out = child_process.spawnSync(`${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`]);
   console.log('Status Code: ' + out.status);
   console.log(out.stdout.toString('utf8'));
   console.log(out.stderr.toString('utf8'));
