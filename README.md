@@ -34,7 +34,7 @@ the final command.
 ## Example usage
 
 ```yaml
-uses: go-choppy/ossutil-github-action@master
+uses: go-choppy/ossutil-github-action-js@master
 with:
     ossArgs: 'cp -r -u ./ oss://choppy-docs'
     accessKey: ${{ secrets.ALIYUN_ACCESS_KEY }}
