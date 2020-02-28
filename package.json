@@ -1,0 +1,25 @@
+{
+  "name": "ossutil-github-action-js",
+  "version": "1.0.0",
+  "description": "<h2 align=\"center\">GitHub actions for aliyun ossutil</h2> <p align=\"center\">update/download/upload files from/to aliyun oss</p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go-choppy/ossutil-github-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/go-choppy/ossutil-github-action/issues"
+  },
+  "homepage": "https://github.com/go-choppy/ossutil-github-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.1",
+    "shelljs": "^0.8.3"
+  }
+}
