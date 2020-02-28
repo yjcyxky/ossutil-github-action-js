@@ -33,4 +33,4 @@ echo accessKeyID=%ACCESSKEY%        >> ossutilconfig
 echo accessKeySecret=%ACCESSSECRET% >> ossutilconfig
 
 echo "Runing command: ossutil %COMMAND%"
-%CURRENTDIR%/ossutil %ARGUMENTS% --config-file ossutilconfig
+%CURRENTDIR%\ossutil %ARGUMENTS% --config-file ossutilconfig
