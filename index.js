@@ -1,11 +1,15 @@
 const core = require('@actions/core');
 const child_process = require('child_process');
-const http = require('http');
+const https = require('https');
 const os = require('os');
 const fs = require('fs');
 const sh = require("shelljs");
 
 var download = function(url, dest, cb) {
+  if (url.search(/https/i) == 0) {
+    var http = https
+  }
+
   var file = fs.createWriteStream(dest);
   var request = http.get(url, function(response) {
     response.pipe(file);
@@ -44,10 +48,10 @@ try {
 
   current_dir = sh.pwd();
   // Run batch program
-  let out = child_process.spawnSync(`${current_dir}/${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`]);
-  console.log('status: ' + out.status);
-  console.log('stdout: ' + out.stdout.toString('utf8'));
-  console.log('stderr: ' + out.stderr.toString('utf8'));
+  let out = child_process.execSync(`${current_dir}/${ossutil_bin}`, [`${ossArgs}`, `${accessKey}`, `${accessSecret}`, `${endpoint}`]);
+  console.log('Status Code: ' + out.status);
+  console.log(out.stdout.toString('utf8'));
+  console.log(out.stderr.toString('utf8'));
 
   core.setOutput("command", `ossutil ${ossArgs}`);
 } catch (error) {
