@@ -9,17 +9,17 @@ set CURRENTDIR="%cd%"
 
 if "%ARGUMENTS%" == "" (
   echo 'Required ossArgs parameter'
-  exit /b 1
+  exit 1
 )
 
 if "%ACCESSKEY%" == "" (
   echo 'Required accessKey parameter'
-  exit /b 1
+  exit 1
 )
 
 if "%ACCESSSECRET%" == "" (
   echo 'Required accessSecret parameter'
-  exit /b 1
+  exit 1
 )
 
 if "%ENDPOINT%" == "" (

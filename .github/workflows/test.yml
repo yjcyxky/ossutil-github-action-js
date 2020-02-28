@@ -8,16 +8,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, windows-latest, macos-latest]
+        os: [ubuntu-18.04, windows-latest, macos-latest]
         node: [10]
     name: Test ossutil action
     steps:
-      - name: Configure environment
-        id: config
-        run: |
-          VERSION=$(echo $GITHUB_REF | sed -e "s/^refs\/tags\/v//")
-          echo ::set-output name=version::$VERSION
-
       - name: Fetch repository
         uses: actions/checkout@master
 
